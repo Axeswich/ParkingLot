@@ -7,6 +7,8 @@ import java.io.IOException;
 
 @WebServlet(name = "Cars", value = "/Cars")
 public class Cars extends HttpServlet {
+    @jakarta.persistence.PersistenceContext
+    private jakarta.persistence.EntityManager entityManager;
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("numberOfFreeParkingSpots", 10);
